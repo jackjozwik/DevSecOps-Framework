@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privilege-escalation-pass
+spec:
+  containers:
+  - name: container
+    image: nginx
+    securityContext:
+      allowPrivilegeEscalation: false

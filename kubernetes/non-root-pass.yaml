@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: non-root-pass
+spec:
+  containers:
+  - name: non-root-container
+    image: nginx
+    securityContext:
+      runAsNonRoot: true

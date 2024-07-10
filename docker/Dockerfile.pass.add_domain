@@ -1,0 +1,2 @@
+FROM alpine
+ADD http://alpinelinux.org/latest.tar.gz /tmp

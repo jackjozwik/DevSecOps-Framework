@@ -1,0 +1,3 @@
+FROM ubuntu
+ARG DEFAULT_URL=http://ubuntu.com
+RUN echo $DEFAULT_URL

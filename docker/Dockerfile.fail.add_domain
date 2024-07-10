@@ -1,0 +1,2 @@
+FROM alpine
+ADD http://example.com/latest.tar.gz /tmp

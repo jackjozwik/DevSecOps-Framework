@@ -1,0 +1,2 @@
+FROM ubuntu
+RUN wget http://ubuntu.com/update

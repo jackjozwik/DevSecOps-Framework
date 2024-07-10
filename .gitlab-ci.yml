@@ -1,0 +1,43 @@
+stages:
+  - prepare
+  - build
+  - scan
+  - deploy
+
+prepare:
+  stage: prepare
+  script:
+    - apt-get update && apt-get install -y git
+    - git clone https://github.com/jackjozwik/DevSecOps-Framework.git
+    - echo "Preparing the environment..."
+    - chmod +x ./setup.sh
+    - ./setup.sh
+
+build:
+  stage: build
+  script:
+    - echo "Building Docker image..."
+    - echo "docker build -t your-image:latest ."
+
+scan:
+  stage: scan
+  script:
+    - echo "Running Trivy to scan configuration..."
+    - trivy conf .
+    - echo "Testing Dockerfile..."
+    - conftest test -p policies/docker_file.rego docker/
+    - echo "Testing Kubernetes configuration..."
+    - conftest test -p policies/kubernetes.rego kubernetes/
+    - echo "Executing Terraform planning..."
+    - terraform plan -out=plan.out
+    - terraform show -json plan.out > plan.json
+    - echo "Testing Terraform plan against custom policy..."
+    - conftest test -p policies/terraform.rego terraform/plan.json
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Applying Terraform..."
+    - echo "terraform apply"
+    - echo "Deploying to Kubernetes..."
+    - echo "kubectl apply -f kubernetes/"
