@@ -1,23 +1,17 @@
 stages:
-  - prepare
-  - build
+  - before_script
   - scan
+  - build
   - deploy
 
-prepare:
-  stage: prepare
-  script:
-    - apt-get update && apt-get install -y git
-    - git clone https://github.com/jackjozwik/DevSecOps-Framework.git
-    - echo "Preparing the environment..."
-    - chmod +x ./setup.sh
-    - ./setup.sh
-
-build:
-  stage: build
-  script:
-    - echo "Building Docker image..."
-    - echo "docker build -t your-image:latest ."
+before_script:
+  - apt-get update && apt-get install -y git
+  - git clone https://github.com/jackjozwik/DevSecOps-Framework.git
+  - cd DevSecOps-Framework
+  - echo "Preparing the environment..."
+  - chmod +x ./setup.sh
+  - ./setup.sh
+  - export PATH=$PATH:/usr/local/bin
 
 scan:
   stage: scan
@@ -33,6 +27,12 @@ scan:
     - terraform show -json plan.out > plan.json
     - echo "Testing Terraform plan against custom policy..."
     - conftest test -p policies/terraform.rego terraform/plan.json
+
+build:
+  stage: build
+  script:
+    - echo "Building Docker image..."
+    - echo "docker build -t image:latest ."
 
 deploy:
   stage: deploy
