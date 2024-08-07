@@ -16,17 +16,32 @@ before_script:
 scan:
   stage: scan
   script:
-    - echo "Running Trivy to scan configuration..."
-    - trivy conf .
-    - echo "Testing Dockerfile..."
-    - conftest test -p policies/docker_file.rego docker/
-    - echo "Testing Kubernetes configuration..."
-    - conftest test -p policies/kubernetes.rego kubernetes/
-    - echo "Executing Terraform planning..."
-    - terraform plan -out=plan.out
-    - terraform show -json plan.out > plan.json
-    - echo "Testing Terraform plan against custom policy..."
-    - conftest test -p policies/terraform.rego terraform/plan.json
+    - echo "Running all scans in parallel..."
+  parallel:
+    matrix:
+      - SCAN_TYPE: docker
+      - SCAN_TYPE: terraform
+      - SCAN_TYPE: k8s
+  before_script:
+    - case $SCAN_TYPE in
+      docker)
+        echo "Running Trivy to scan configuration..."
+        trivy conf .
+        echo "Testing Dockerfile..."
+        conftest test -p policy/docker_file.rego docker/
+        ;;
+      k8s)
+        echo "Testing Kubernetes configuration..."
+        conftest test -p policy/kubernetes.rego kubernetes/
+        ;;
+      terraform)
+        echo "Executing Terraform planning..."
+        terraform plan -out=plan.out
+        terraform show -json plan.out > plan.json
+        echo "Testing Terraform plan against custom policy..."
+        conftest test -p policy/terraform.rego terraform/plan.json
+        ;;
+        esac
 
 build:
   stage: build

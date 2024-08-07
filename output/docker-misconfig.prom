@@ -1,0 +1,51 @@
+# HELP trivy_docker_scan_info Information about the Docker Trivy scan
+# TYPE trivy_docker_scan_info gauge
+trivy_docker_scan_info{schema_version="2",created_at="2024-08-06T19:22:07.34359089-04:00",artifact_name="CTF_EKS_Enviornment_docker",artifact_type="filesystem"} 1
+
+# HELP trivy_docker_checks_total Total number of Docker checks
+# TYPE trivy_docker_checks_total gauge
+trivy_docker_checks_total{result="success",target="CTFd_CTFd_Dockerfile"} 26
+trivy_docker_checks_total{result="failure",target="CTFd_CTFd_Dockerfile"} 1
+trivy_docker_checks_total{result="exception",target="CTFd_CTFd_Dockerfile"} 0
+trivy_docker_checks_total{result="success",target="athena_CTFChallenge_PromptInjection1_Dockerfile"} 25
+trivy_docker_checks_total{result="failure",target="athena_CTFChallenge_PromptInjection1_Dockerfile"} 2
+trivy_docker_checks_total{result="exception",target="athena_CTFChallenge_PromptInjection1_Dockerfile"} 0
+
+# HELP trivy_docker_misconfiguration Details of Docker misconfigurations
+# TYPE trivy_docker_misconfiguration gauge
+trivy_docker_misconfiguration{target="CTFd_CTFd_Dockerfile",class="config",type="dockerfile",misconfig_type="Dockerfile_Security_Check",id="DS026",avdid="AVD-DS-0026",title="No_HEALTHCHECK_defined",severity="LOW",status="FAIL",namespace="builtin.dockerfile.DS026",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfiguration{target="athena_CTFChallenge_PromptInjection1_Dockerfile",class="config",type="dockerfile",misconfig_type="Dockerfile_Security_Check",id="DS002",avdid="AVD-DS-0002",title="Image_user_should_not_be_'root'",severity="HIGH",status="FAIL",namespace="builtin.dockerfile.DS002",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfiguration{target="athena_CTFChallenge_PromptInjection1_Dockerfile",class="config",type="dockerfile",misconfig_type="Dockerfile_Security_Check",id="DS026",avdid="AVD-DS-0026",title="No_HEALTHCHECK_defined",severity="LOW",status="FAIL",namespace="builtin.dockerfile.DS026",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1
+
+# HELP trivy_docker_misconfig_severity_total Total number of Docker misconfigurations by severity
+# TYPE trivy_docker_misconfig_severity_total gauge
+trivy_docker_misconfig_severity_total{severity="LOW",target="CTFd_CTFd_Dockerfile"} 1
+trivy_docker_misconfig_severity_total{severity="HIGH",target="athena_CTFChallenge_PromptInjection1_Dockerfile"} 1
+trivy_docker_misconfig_severity_total{severity="LOW",target="athena_CTFChallenge_PromptInjection1_Dockerfile"} 1
+
+# HELP trivy_docker_misconfig_info Detailed information about Docker misconfigurations
+# TYPE trivy_docker_misconfig_info gauge
+trivy_docker_misconfig_info{id="DS026",description="You_should_add_HEALTHCHECK_instruction_in_your_docker_container_images_to_perform_the_health_check_on_running_containers.",message="Add_HEALTHCHECK_instruction_in_your_Dockerfile",query="data.builtin.dockerfile.DS026.deny",resolution="Add_HEALTHCHECK_instruction_in_Dockerfile",instance="1",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfig_info{id="DS002",description="Running_containers_with_'root'_user_can_lead_to_a_container_escape_situation._It_is_a_best_practice_to_run_containers_as_non-root_users,_which_can_be_done_by_adding_a_'USER'_statement_to_the_Dockerfile.",message="Specify_at_least_1_USER_command_in_Dockerfile_with_non-root_user_as_argument",query="data.builtin.dockerfile.DS002.deny",resolution="Add_'USER_<non_root_user_name>'_line_to_the_Dockerfile",instance="1",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfig_info{id="DS026",description="You_should_add_HEALTHCHECK_instruction_in_your_docker_container_images_to_perform_the_health_check_on_running_containers.",message="Add_HEALTHCHECK_instruction_in_your_Dockerfile",query="data.builtin.dockerfile.DS026.deny",resolution="Add_HEALTHCHECK_instruction_in_Dockerfile",instance="1",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1
+
+# HELP trivy_docker_misconfig_reference Reference URLs for Docker misconfigurations
+# TYPE trivy_docker_misconfig_reference gauge
+trivy_docker_misconfig_reference{id="DS026",url="https__blog.aquasec.com_docker-security-best-practices",instance="1",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfig_reference{id="DS026",url="https__avd.aquasec.com_misconfig_ds026",instance="1",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfig_reference{id="DS002",url="https__docs.docker.com_develop_develop-images_dockerfile_best-practices_",instance="1",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfig_reference{id="DS002",url="https__avd.aquasec.com_misconfig_ds002",instance="1",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfig_reference{id="DS026",url="https__blog.aquasec.com_docker-security-best-practices",instance="1",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1
+trivy_docker_misconfig_reference{id="DS026",url="https__avd.aquasec.com_misconfig_ds026",instance="1",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1
+
+# HELP trivy_docker_misconfig_primary_url Primary URLs for Docker misconfigurations
+# TYPE trivy_docker_misconfig_primary_url gauge
+trivy_docker_misconfig_primary_url{id="DS026",url="https__avd.aquasec.com_misconfig_ds026",instance="1",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfig_primary_url{id="DS002",url="https__avd.aquasec.com_misconfig_ds002",instance="1",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfig_primary_url{id="DS026",url="https__avd.aquasec.com_misconfig_ds026",instance="1",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1
+
+# HELP trivy_docker_misconfig_cause Cause metadata for Docker misconfigurations
+# TYPE trivy_docker_misconfig_cause gauge
+trivy_docker_misconfig_cause{id="DS026",provider="Dockerfile",service="general",target="CTFd_CTFd_Dockerfile",instance="1",uuid="8e368754-659e-4c44-bbff-f2d2ffcb1982"} 1
+trivy_docker_misconfig_cause{id="DS002",provider="Dockerfile",service="general",target="athena_CTFChallenge_PromptInjection1_Dockerfile",instance="1",uuid="229b578c-daad-4bf9-85f7-712145e4a893"} 1
+trivy_docker_misconfig_cause{id="DS026",provider="Dockerfile",service="general",target="athena_CTFChallenge_PromptInjection1_Dockerfile",instance="1",uuid="1de0c7c5-38f5-4083-b23d-e3ae9f410010"} 1

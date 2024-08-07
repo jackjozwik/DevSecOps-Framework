@@ -14,7 +14,7 @@ suspect_runs := {
 }
 
 bad_domains := {
-	"example.com"
+	"enter-your-blacklisted-domains.com"
 }
 
 # Deny if secrets found in the ENV command

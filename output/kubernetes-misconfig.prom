@@ -1,0 +1,186 @@
+# HELP trivy_kubernetes_scan_info Information about the Kubernetes Trivy scan
+# TYPE trivy_kubernetes_scan_info gauge
+trivy_kubernetes_scan_info{schema_version="2",created_at="2024-08-06T19:23:10.813927744-04:00",artifact_name="CTF_EKS_Enviornment_kubernetes",artifact_type="filesystem"} 1
+
+# HELP trivy_kubernetes_checks_total Total number of Kubernetes checks
+# TYPE trivy_kubernetes_checks_total gauge
+trivy_kubernetes_checks_total{result="success",target="aws-load-balancer-controller.yaml"} 85
+trivy_kubernetes_checks_total{result="failure",target="aws-load-balancer-controller.yaml"} 10
+trivy_kubernetes_checks_total{result="exception",target="aws-load-balancer-controller.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="aws-load-balancer-webhook-cert.yaml"} 94
+trivy_kubernetes_checks_total{result="failure",target="aws-load-balancer-webhook-cert.yaml"} 1
+trivy_kubernetes_checks_total{result="exception",target="aws-load-balancer-webhook-cert.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="aws-load-balancer-webhook-issuer.yaml"} 94
+trivy_kubernetes_checks_total{result="failure",target="aws-load-balancer-webhook-issuer.yaml"} 1
+trivy_kubernetes_checks_total{result="exception",target="aws-load-balancer-webhook-issuer.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="deployment.yaml"} 83
+trivy_kubernetes_checks_total{result="failure",target="deployment.yaml"} 12
+trivy_kubernetes_checks_total{result="exception",target="deployment.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="ingress.yaml"} 95
+trivy_kubernetes_checks_total{result="failure",target="ingress.yaml"} 0
+trivy_kubernetes_checks_total{result="exception",target="ingress.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="secrets.yaml"} 95
+trivy_kubernetes_checks_total{result="failure",target="secrets.yaml"} 0
+trivy_kubernetes_checks_total{result="exception",target="secrets.yaml"} 0
+trivy_kubernetes_checks_total{result="success",target="service.yaml"} 95
+trivy_kubernetes_checks_total{result="failure",target="service.yaml"} 0
+trivy_kubernetes_checks_total{result="exception",target="service.yaml"} 0
+
+# HELP trivy_kubernetes_misconfiguration Details of Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfiguration gauge
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV020",avdid="AVD-KSV-0020",title="Runs_with_UID_<=_10000",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV020",uuid="95c87f93-43d7-480e-8b36-36e8682b46b1"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV106",avdid="AVD-KSV-0106",title="Container_capabilities_must_only_include_NET_BIND_SERVICE",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV106",uuid="56b61f73-73bc-4d74-aeee-b1b5db7c2a15"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV104",avdid="AVD-KSV-0104",title="Seccomp_policies_disabled",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV104",uuid="fa0c7221-efe7-467b-be4d-c666ad8539c9"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV014",avdid="AVD-KSV-0014",title="Root_file_system_is_not_read-only",severity="HIGH",status="FAIL",namespace="builtin.kubernetes.KSV014",uuid="f192d356-1183-4ac7-a140-42d50e15333d"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV021",avdid="AVD-KSV-0021",title="Runs_with_GID_<=_10000",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV021",uuid="7357a081-ce02-479f-bd2b-82b764063625"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV018",avdid="AVD-KSV-0018",title="Memory_not_limited",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV018",uuid="27a23bca-f4a1-4b4d-89ee-17533bf91f4c"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV012",avdid="AVD-KSV-0012",title="Runs_as_root_user",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV012",uuid="c4aeb94d-8769-477e-a5ed-d195fc270f81"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV037",avdid="AVD-KSV-0037",title="User_Pods_should_not_be_placed_in_kube-system_namespace",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV037",uuid="a3c66443-556d-42c4-b7e1-6ac623afe027"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-webhook-issuer.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV037",avdid="AVD-KSV-0037",title="User_Pods_should_not_be_placed_in_kube-system_namespace",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV037",uuid="561e6b69-7d3c-4677-8404-dea326f078b7"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV012",avdid="AVD-KSV-0012",title="Runs_as_root_user",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV012",uuid="0568fc06-a0eb-4298-aef8-0f5620768dab"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV003",avdid="AVD-KSV-0003",title="Default_capabilities_some_containers_do_not_drop_all",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV003",uuid="abf3bc90-27fb-41b4-8f45-109aea9c5891"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV030",avdid="AVD-KSV-0030",title="Runtime_Default_Seccomp_profile_not_set",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV030",uuid="a7ff3cc4-8815-4bc2-9fc0-e7c0ffd1e5cc"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV013",avdid="AVD-KSV-0013",title="Image_tag_latest_used",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV013",uuid="330945e1-6c9f-4c93-b0d4-ce618134c33b"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV021",avdid="AVD-KSV-0021",title="Runs_with_GID_<=_10000",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV021",uuid="51cdff30-e6d6-40d6-ab82-d681953b8126"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV030",avdid="AVD-KSV-0030",title="Runtime_Default_Seccomp_profile_not_set",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV030",uuid="d296d3ca-739c-4bca-9325-a777415339fb"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV001",avdid="AVD-KSV-0001",title="Can_elevate_its_own_privileges",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV001",uuid="d9423ea5-4332-4cc2-82a2-b2fb78d6c5ee"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV003",avdid="AVD-KSV-0003",title="Default_capabilities_some_containers_do_not_drop_all",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV003",uuid="4adc41ac-18cb-48b6-9828-7473bd273072"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV001",avdid="AVD-KSV-0001",title="Can_elevate_its_own_privileges",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV001",uuid="4e48f590-1654-49c2-a3a3-8404ead6e197"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV014",avdid="AVD-KSV-0014",title="Root_file_system_is_not_read-only",severity="HIGH",status="FAIL",namespace="builtin.kubernetes.KSV014",uuid="14c83f0d-21fa-45db-aca7-3501ec1aee1d"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV106",avdid="AVD-KSV-0106",title="Container_capabilities_must_only_include_NET_BIND_SERVICE",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV106",uuid="9af2cac6-a525-469d-b318-347d6502090d"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-webhook-cert.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV037",avdid="AVD-KSV-0037",title="User_Pods_should_not_be_placed_in_kube-system_namespace",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV037",uuid="f651de29-9baf-4393-a4d0-5593d35af086"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV104",avdid="AVD-KSV-0104",title="Seccomp_policies_disabled",severity="MEDIUM",status="FAIL",namespace="builtin.kubernetes.KSV104",uuid="4c2d3dee-76b5-4144-84cb-5bd00e19ce68"} 1
+trivy_kubernetes_misconfiguration{target="deployment.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV011",avdid="AVD-KSV-0011",title="CPU_not_limited",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV011",uuid="3268d6a6-87b3-4b57-a354-0f9122f2b622"} 1
+trivy_kubernetes_misconfiguration{target="aws-load-balancer-controller.yaml",class="config",type="kubernetes",misconfig_type="Kubernetes_Security_Check",id="KSV020",avdid="AVD-KSV-0020",title="Runs_with_UID_<=_10000",severity="LOW",status="FAIL",namespace="builtin.kubernetes.KSV020",uuid="f8f42b61-eab4-44bc-a007-df403a8e3d22"} 1
+
+# HELP trivy_kubernetes_misconfig_severity_total Total number of Kubernetes misconfigurations by severity
+# TYPE trivy_kubernetes_misconfig_severity_total gauge
+trivy_kubernetes_misconfig_severity_total{severity="MEDIUM",target="aws-load-balancer-controller.yaml"} 4
+trivy_kubernetes_misconfig_severity_total{severity="LOW",target="aws-load-balancer-controller.yaml"} 5
+trivy_kubernetes_misconfig_severity_total{severity="HIGH",target="aws-load-balancer-controller.yaml"} 1
+trivy_kubernetes_misconfig_severity_total{severity="MEDIUM",target="aws-load-balancer-webhook-cert.yaml"} 1
+trivy_kubernetes_misconfig_severity_total{severity="MEDIUM",target="aws-load-balancer-webhook-issuer.yaml"} 1
+trivy_kubernetes_misconfig_severity_total{severity="MEDIUM",target="deployment.yaml"} 4
+trivy_kubernetes_misconfig_severity_total{severity="LOW",target="deployment.yaml"} 7
+trivy_kubernetes_misconfig_severity_total{severity="HIGH",target="deployment.yaml"} 1
+
+# HELP trivy_kubernetes_misconfig_info Detailed information about Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfig_info gauge
+trivy_kubernetes_misconfig_info{id="KSV030",description="According_to_pod_security_standard_'Seccomp',_the_RuntimeDefault_seccomp_profile_must_be_required,_or_allow_specific_additional_profiles.",message="Either_Pod_or_Container_should_set_'securityContext.seccompProfile.type'_to_'RuntimeDefault'",query="data.builtin.kubernetes.KSV030.deny",resolution="Set_'spec.securityContext.seccompProfile.type',_'spec.containers[*].securityContext.seccompProfile'_and_'spec.initContainers[*].securityContext.seccompProfile'_to_'RuntimeDefault'_or_undefined."} 1
+trivy_kubernetes_misconfig_info{id="KSV018",description="Enforcing_memory_limits_prevents_DoS_via_resource_exhaustion.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'resources.limits.memory'",query="data.builtin.kubernetes.KSV018.deny",resolution="Set_a_limit_value_under_'containers[].resources.limits.memory'."} 1
+trivy_kubernetes_misconfig_info{id="KSV021",description="Force_the_container_to_run_with_group_ID_>_10000_to_avoid_conflicts_with_the_host’s_user_table.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_set_'securityContext.runAsGroup'_>_10000",query="data.builtin.kubernetes.KSV021.deny",resolution="Set_'containers[].securityContext.runAsGroup'_to_an_integer_>_10000."} 1
+trivy_kubernetes_misconfig_info{id="KSV003",description="The_container_should_drop_all_default_capabilities_and_add_only_those_that_are_needed_for_its_execution.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_add_'ALL'_to_'securityContext.capabilities.drop'",query="data.builtin.kubernetes.KSV003.deny",resolution="Add_'ALL'_to_containers[].securityContext.capabilities.drop."} 1
+trivy_kubernetes_misconfig_info{id="KSV001",description="A_program_inside_the_container_can_elevate_its_own_privileges_and_run_as_root,_which_might_give_the_program_control_over_the_container_and_node.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'securityContext.allowPrivilegeEscalation'_to_false",query="data.builtin.kubernetes.KSV001.deny",resolution="Set_'set_containers[].securityContext.allowPrivilegeEscalation'_to_'false'."} 1
+trivy_kubernetes_misconfig_info{id="KSV104",description="A_program_inside_the_container_can_bypass_Seccomp_protection_policies.",message="container_controller_of_deployment_aws-load-balancer-controller_in_kube-system_namespace_should_specify_a_seccomp_profile",query="data.builtin.kubernetes.KSV104.deny",resolution="Specify_seccomp_either_by_annotation_or_by_seccomp_profile_type_having_allowed_values_as_per_pod_security_standards"} 1
+trivy_kubernetes_misconfig_info{id="KSV001",description="A_program_inside_the_container_can_elevate_its_own_privileges_and_run_as_root,_which_might_give_the_program_control_over_the_container_and_node.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_set_'securityContext.allowPrivilegeEscalation'_to_false",query="data.builtin.kubernetes.KSV001.deny",resolution="Set_'set_containers[].securityContext.allowPrivilegeEscalation'_to_'false'."} 1
+trivy_kubernetes_misconfig_info{id="KSV037",description="ensure_that_User_pods_are_not_placed_in_kube-system_namespace",message="Deployment_'aws-load-balancer-controller'_should_not_be_set_with_'kube-system'_namespace",query="data.builtin.kubernetes.KSV037.deny",resolution="Deploy_the_use_pods_into_a_designated_namespace_which_is_not_kube-system."} 1
+trivy_kubernetes_misconfig_info{id="KSV014",description="An_immutable_root_file_system_prevents_applications_from_writing_to_their_local_disk._This_can_limit_intrusions,_as_attackers_will_not_be_able_to_tamper_with_the_file_system_or_write_foreign_executables_to_disk.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_set_'securityContext.readOnlyRootFilesystem'_to_true",query="data.builtin.kubernetes.KSV014.deny",resolution="Change_'containers[].securityContext.readOnlyRootFilesystem'_to_'true'."} 1
+trivy_kubernetes_misconfig_info{id="KSV020",description="Force_the_container_to_run_with_user_ID_>_10000_to_avoid_conflicts_with_the_host’s_user_table.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'securityContext.runAsUser'_>_10000",query="data.builtin.kubernetes.KSV020.deny",resolution="Set_'containers[].securityContext.runAsUser'_to_an_integer_>_10000."} 1
+trivy_kubernetes_misconfig_info{id="KSV106",description="Containers_must_drop_ALL_capabilities,_and_are_only_permitted_to_add_back_the_NET_BIND_SERVICE_capability.",message="container_should_drop_all",query="data.builtin.kubernetes.KSV106.deny",resolution="Set_'spec.containers[*].securityContext.capabilities.drop'_to_'ALL'_and_only_add_'NET_BIND_SERVICE'_to_'spec.containers[*].securityContext.capabilities.add'."} 1
+trivy_kubernetes_misconfig_info{id="KSV013",description="It_is_best_to_avoid_using_the_'latest'_image_tag_when_deploying_containers_in_production._Doing_so_makes_it_hard_to_track_which_version_of_the_image_is_running,_and_hard_to_roll_back_the_version.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_specify_an_image_tag",query="data.builtin.kubernetes.KSV013.deny",resolution="Use_a_specific_container_image_tag_that_is_not_'latest'."} 1
+trivy_kubernetes_misconfig_info{id="KSV011",description="Enforcing_CPU_limits_prevents_DoS_via_resource_exhaustion.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'resources.limits.cpu'",query="data.builtin.kubernetes.KSV011.deny",resolution="Set_a_limit_value_under_'containers[].resources.limits.cpu'."} 1
+trivy_kubernetes_misconfig_info{id="KSV003",description="The_container_should_drop_all_default_capabilities_and_add_only_those_that_are_needed_for_its_execution.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_add_'ALL'_to_'securityContext.capabilities.drop'",query="data.builtin.kubernetes.KSV003.deny",resolution="Add_'ALL'_to_containers[].securityContext.capabilities.drop."} 1
+trivy_kubernetes_misconfig_info{id="KSV104",description="A_program_inside_the_container_can_bypass_Seccomp_protection_policies.",message="container_ctfd_of_deployment_ctfd_in_default_namespace_should_specify_a_seccomp_profile",query="data.builtin.kubernetes.KSV104.deny",resolution="Specify_seccomp_either_by_annotation_or_by_seccomp_profile_type_having_allowed_values_as_per_pod_security_standards"} 1
+trivy_kubernetes_misconfig_info{id="KSV037",description="ensure_that_User_pods_are_not_placed_in_kube-system_namespace",message="Certificate_'aws-load-balancer-webhook-tls'_should_not_be_set_with_'kube-system'_namespace",query="data.builtin.kubernetes.KSV037.deny",resolution="Deploy_the_use_pods_into_a_designated_namespace_which_is_not_kube-system."} 1
+trivy_kubernetes_misconfig_info{id="KSV020",description="Force_the_container_to_run_with_user_ID_>_10000_to_avoid_conflicts_with_the_host’s_user_table.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_set_'securityContext.runAsUser'_>_10000",query="data.builtin.kubernetes.KSV020.deny",resolution="Set_'containers[].securityContext.runAsUser'_to_an_integer_>_10000."} 1
+trivy_kubernetes_misconfig_info{id="KSV014",description="An_immutable_root_file_system_prevents_applications_from_writing_to_their_local_disk._This_can_limit_intrusions,_as_attackers_will_not_be_able_to_tamper_with_the_file_system_or_write_foreign_executables_to_disk.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'securityContext.readOnlyRootFilesystem'_to_true",query="data.builtin.kubernetes.KSV014.deny",resolution="Change_'containers[].securityContext.readOnlyRootFilesystem'_to_'true'."} 1
+trivy_kubernetes_misconfig_info{id="KSV037",description="ensure_that_User_pods_are_not_placed_in_kube-system_namespace",message="Issuer_'aws-load-balancer-webhook-issuer'_should_not_be_set_with_'kube-system'_namespace",query="data.builtin.kubernetes.KSV037.deny",resolution="Deploy_the_use_pods_into_a_designated_namespace_which_is_not_kube-system."} 1
+trivy_kubernetes_misconfig_info{id="KSV012",description="Force_the_running_image_to_run_as_a_non-root_user_to_ensure_least_privileges.",message="Container_'controller'_of_Deployment_'aws-load-balancer-controller'_should_set_'securityContext.runAsNonRoot'_to_true",query="data.builtin.kubernetes.KSV012.deny",resolution="Set_'containers[].securityContext.runAsNonRoot'_to_true."} 1
+trivy_kubernetes_misconfig_info{id="KSV021",description="Force_the_container_to_run_with_group_ID_>_10000_to_avoid_conflicts_with_the_host’s_user_table.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'securityContext.runAsGroup'_>_10000",query="data.builtin.kubernetes.KSV021.deny",resolution="Set_'containers[].securityContext.runAsGroup'_to_an_integer_>_10000."} 1
+trivy_kubernetes_misconfig_info{id="KSV012",description="Force_the_running_image_to_run_as_a_non-root_user_to_ensure_least_privileges.",message="Container_'ctfd'_of_Deployment_'ctfd'_should_set_'securityContext.runAsNonRoot'_to_true",query="data.builtin.kubernetes.KSV012.deny",resolution="Set_'containers[].securityContext.runAsNonRoot'_to_true."} 1
+
+# HELP trivy_kubernetes_misconfig_reference Reference URLs for Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfig_reference gauge
+trivy_kubernetes_misconfig_reference{id="KSV104",url="https__avd.aquasec.com_misconfig_ksv104"} 1
+trivy_kubernetes_misconfig_reference{id="KSV020",url="https__avd.aquasec.com_misconfig_ksv020"} 1
+trivy_kubernetes_misconfig_reference{id="KSV013",url="https__kubernetes.io_docs_concepts_configuration_overview_#container-images"} 1
+trivy_kubernetes_misconfig_reference{id="KSV104",url="https__kubernetes.io_docs_concepts_security_pod-security-standards_#baseline"} 1
+trivy_kubernetes_misconfig_reference{id="KSV018",url="https__avd.aquasec.com_misconfig_ksv018"} 1
+trivy_kubernetes_misconfig_reference{id="KSV001",url="https__avd.aquasec.com_misconfig_ksv001"} 1
+trivy_kubernetes_misconfig_reference{id="KSV030",url="https__kubernetes.io_docs_concepts_security_pod-security-standards_#restricted"} 1
+trivy_kubernetes_misconfig_reference{id="KSV014",url="https__kubesec.io_basics_containers-securitycontext-readonlyrootfilesystem-true_"} 1
+trivy_kubernetes_misconfig_reference{id="KSV030",url="https__avd.aquasec.com_misconfig_ksv030"} 1
+trivy_kubernetes_misconfig_reference{id="KSV012",url="https__avd.aquasec.com_misconfig_ksv012"} 1
+trivy_kubernetes_misconfig_reference{id="KSV037",url="https__kubernetes.io_docs_reference_setup-tools_kubeadm_implementation-details_"} 1
+trivy_kubernetes_misconfig_reference{id="KSV014",url="https__avd.aquasec.com_misconfig_ksv014"} 1
+trivy_kubernetes_misconfig_reference{id="KSV106",url="https__kubernetes.io_docs_concepts_security_pod-security-standards_#restricted"} 1
+trivy_kubernetes_misconfig_reference{id="KSV037",url="https__avd.aquasec.com_misconfig_ksv037"} 1
+trivy_kubernetes_misconfig_reference{id="KSV012",url="https__kubernetes.io_docs_concepts_security_pod-security-standards_#restricted"} 1
+trivy_kubernetes_misconfig_reference{id="KSV013",url="https__avd.aquasec.com_misconfig_ksv013"} 1
+trivy_kubernetes_misconfig_reference{id="KSV106",url="https__avd.aquasec.com_misconfig_ksv106"} 1
+trivy_kubernetes_misconfig_reference{id="KSV021",url="https__kubesec.io_basics_containers-securitycontext-runasuser_"} 1
+trivy_kubernetes_misconfig_reference{id="KSV003",url="https__avd.aquasec.com_misconfig_ksv003"} 1
+trivy_kubernetes_misconfig_reference{id="KSV001",url="https__kubernetes.io_docs_concepts_security_pod-security-standards_#restricted"} 1
+trivy_kubernetes_misconfig_reference{id="KSV011",url="https__avd.aquasec.com_misconfig_ksv011"} 1
+trivy_kubernetes_misconfig_reference{id="KSV020",url="https__kubesec.io_basics_containers-securitycontext-runasuser_"} 1
+trivy_kubernetes_misconfig_reference{id="KSV003",url="https__kubesec.io_basics_containers-securitycontext-capabilities-drop-index-all_"} 1
+trivy_kubernetes_misconfig_reference{id="KSV021",url="https__avd.aquasec.com_misconfig_ksv021"} 1
+trivy_kubernetes_misconfig_reference{id="KSV011",url="https__cloud.google.com_blog_products_containers-kubernetes_kubernetes-best-practices-resource-requests-and-limits"} 1
+trivy_kubernetes_misconfig_reference{id="KSV018",url="https__kubesec.io_basics_containers-resources-limits-memory_"} 1
+
+# HELP trivy_kubernetes_misconfig_primary_url Primary URLs for Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfig_primary_url gauge
+trivy_kubernetes_misconfig_primary_url{id="KSV020",url="https__avd.aquasec.com_misconfig_ksv020"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV012",url="https__avd.aquasec.com_misconfig_ksv012"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV037",url="https__avd.aquasec.com_misconfig_ksv037"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV106",url="https__avd.aquasec.com_misconfig_ksv106"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV003",url="https__avd.aquasec.com_misconfig_ksv003"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV018",url="https__avd.aquasec.com_misconfig_ksv018"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV014",url="https__avd.aquasec.com_misconfig_ksv014"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV021",url="https__avd.aquasec.com_misconfig_ksv021"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV013",url="https__avd.aquasec.com_misconfig_ksv013"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV030",url="https__avd.aquasec.com_misconfig_ksv030"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV001",url="https__avd.aquasec.com_misconfig_ksv001"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV011",url="https__avd.aquasec.com_misconfig_ksv011"} 1
+trivy_kubernetes_misconfig_primary_url{id="KSV104",url="https__avd.aquasec.com_misconfig_ksv104"} 1
+
+# HELP trivy_kubernetes_misconfig_cause Cause metadata for Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfig_cause gauge
+trivy_kubernetes_misconfig_cause{id="KSV104",provider="Kubernetes",service="general",start_line="0",end_line="0"} 1
+trivy_kubernetes_misconfig_cause{id="KSV003",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV012",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV020",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV018",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV030",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV021",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV037",provider="Kubernetes",service="general",start_line="7",end_line="19"} 1
+trivy_kubernetes_misconfig_cause{id="KSV001",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV014",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV030",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV037",provider="Kubernetes",service="general",start_line="7",end_line="7"} 1
+trivy_kubernetes_misconfig_cause{id="KSV012",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV037",provider="Kubernetes",service="general",start_line="10",end_line="56"} 1
+trivy_kubernetes_misconfig_cause{id="KSV021",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV013",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV003",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV001",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV106",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV106",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV014",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+trivy_kubernetes_misconfig_cause{id="KSV020",provider="Kubernetes",service="general",start_line="23",end_line="52"} 1
+trivy_kubernetes_misconfig_cause{id="KSV011",provider="Kubernetes",service="general",start_line="18",end_line="65"} 1
+
+# HELP trivy_kubernetes_misconfig_code Code snippets for Kubernetes misconfigurations
+# TYPE trivy_kubernetes_misconfig_code gauge
+trivy_kubernetes_misconfig_code{id="KSV014",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV012",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV013",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV003",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV037",line_number="7",content="__secretName_aws-load-balancer-webhook-tls",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV003",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV020",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV001",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV106",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV106",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV030",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV037",line_number="7",content="__selfSigned_{}",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV037",line_number="10",content="__replicas_1",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV011",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV012",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV020",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV021",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV014",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV030",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV018",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV021",line_number="23",content="________-_name_controller",is_cause="true"} 1
+trivy_kubernetes_misconfig_code{id="KSV001",line_number="18",content="______-_name_ctfd",is_cause="true"} 1
